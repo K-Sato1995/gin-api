@@ -12,6 +12,7 @@ func SetupRouter() *gin.Engine {
 	grp1 := router.Group("/gin-api")
 	{
 		grp1.GET("todos", controllers.GetAllTodos)
+		grp1.POST("todo", controllers.CreateTodo)
 	}
 
 	return router

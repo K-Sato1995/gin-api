@@ -23,3 +23,11 @@ func GetAllTodos(todo *[]Todo) (err error) {
 	}
 	return nil
 }
+
+// CreateTodo ... Insert New data
+func CreateTodo(todo *Todo) (err error) {
+	if err = configs.DB.Create(todo).Error; err != nil {
+		return err
+	}
+	return nil
+}
