@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/K-Sato1995/gin-api/configs"
+	"github.com/K-Sato1995/gin-api/models"
 	"github.com/K-Sato1995/gin-api/routes"
 	"github.com/jinzhu/gorm"
 )
@@ -19,6 +20,9 @@ func main() {
 	if err != nil {
 		fmt.Println("Status:", err)
 	}
+
+	defer configs.DB.Close()
+	configs.DB.AutoMigrate(&models.Todo{})
 
 	r := routes.SetupRouter()
 	r.Run()
