@@ -7,10 +7,9 @@ import (
 
 // SetupRouter returns the routes
 func SetupRouter() *gin.Engine {
-
 	router := gin.Default()
 
-	grp1 := router.Group("/todo-api")
+	grp1 := router.Group("/gin-api")
 	{
 		grp1.GET("todos", controllers.GetAllTodos)
 	}

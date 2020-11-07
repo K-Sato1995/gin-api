@@ -2,7 +2,6 @@ package configs
 
 import (
 	"fmt"
-	_ "fmt"
 
 	"github.com/jinzhu/gorm"
 )
@@ -19,6 +18,7 @@ type DBConfig struct {
 	Password string
 }
 
+// BuildDBConfig sets up a db
 func BuildDBConfig() *DBConfig {
 	dbConfig := DBConfig{
 		Host:     "localhost",
@@ -30,6 +30,7 @@ func BuildDBConfig() *DBConfig {
 	return &dbConfig
 }
 
+// DbURL returns
 func DbURL(dbConfig *DBConfig) string {
 	return fmt.Sprintf(
 		"%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local",
