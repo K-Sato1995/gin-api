@@ -21,7 +21,7 @@ type DBConfig struct {
 // BuildDBConfig sets up a db
 func BuildDBConfig() *DBConfig {
 	dbConfig := DBConfig{
-		Host:     "localhost",
+		Host:     "docker.for.mac.localhost",
 		Port:     3306,
 		User:     "root",
 		Password: "password",
