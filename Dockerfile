@@ -1,3 +1,3 @@
 FROM golang
-RUN go get github.com/gin-gonic/gin
+RUN go get github.com/gin-gonic/gin && go get -u github.com/rubenv/sql-migrate/...
 WORKDIR /go/src/gin-api
